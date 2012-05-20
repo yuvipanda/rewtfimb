@@ -2,6 +2,7 @@ from django.contrib.gis.db import models
 
 class Route(models.Model):
     name = models.CharField(max_length=1024)
+    city = models.ForeignKey('cities.City')
 
 class RouteSegment(models.Model):
     start = models.ForeignKey('stops.Stop', related_name='segments_starting')
